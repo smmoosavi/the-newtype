@@ -1,20 +1,22 @@
 [package]
-name = "the-newtype"
+name = "the-newtype-macros"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "The Newtype trait"
+description = "The Newtype trait macros"
 homepage = "https://github.com/smmoosavi/the-newtype"
 repository = "https://github.com/smmoosavi/the-newtype"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-the-newtype-core = { path = "./core" }
-the-newtype-macros = { path = "./macros" }
+proc-macro2 = "1"
+proc-macro-crate = "1"
+quote = "1"
+syn = { version = "1", features = ["full"] }
 
-[workspace]
-members = [
-    "core",
-    "macros",
-]
+[dev-dependencies]
+the-newtype = { path = ".." }
+
+[lib]
+proc-macro = true
