@@ -4,6 +4,7 @@ mod utils;
 use quote::ToTokens;
 use syn::{parse_macro_input, DeriveInput};
 
+#[doc = include_str!("./newtype.md")]
 #[proc_macro_derive(Newtype, attributes(newtype))]
 pub fn drive_newtype(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     match newtype::Newtype::from_derive_input(&parse_macro_input!(input as DeriveInput)) {

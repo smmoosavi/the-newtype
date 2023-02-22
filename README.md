@@ -10,6 +10,7 @@ When you define a trait, you can support the `Newtype` trait and any type that i
 
 ```rust
 use the_newtype::Newtype;
+use derive_more::AsRef;
 
 pub trait MyTrait {
     fn my_method(&self) -> String;
@@ -24,13 +25,8 @@ where
         self.as_ref().my_method()
     }
 }
-```
 
-Now you can use the `MyTrait` trait for the newtype.
-
-```rust
-use the_newtype::Newtype;
-use derive_more::AsRef;
+// Now we can use the `MyTrait` trait for the newtype.
 
 struct Foo;
 
@@ -55,7 +51,7 @@ fn main() {
 
 ## When to use
 
-You can use the `Newtype` trait when you want to wrap a type in a newtype and you want the newtype implements **ALL** of the newtype-supported traits of the wrapped type. If you need some of the traits, you should implement them manually and avoid using the `Newtype` trait.
+You can use the `Newtype` trait when you want to wrap a type in a newtype and you want the newtype implements **ALL** the newtype-supported traits of the wrapped type. If you need some traits, you should implement them manually and avoid using the `Newtype` trait.
 
 ## Drawbacks
 
@@ -94,7 +90,7 @@ where
     T: Fancy,
 {
     fn awesome_method(&self) -> String {
-        let fancy = self.fancy_method()
+        let fancy = self.fancy_method();
         format!("{} is awesome!", fancy)
     }
 }
@@ -112,7 +108,7 @@ use the_newtype::Newtype;
 use derive_more::AsRef;
 
 #[derive(AsRef, Newtype)]
-struct Bar(Foo);
+struct Bar(String);
 ```
 
 ### How to implement a trait for `&self`
