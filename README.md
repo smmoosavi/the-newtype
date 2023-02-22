@@ -1,5 +1,10 @@
 # The `Newtype` trait
 
+[![Build Status](https://github.com/smmoosavi/the-newtype/workflows/CI/badge.svg)](https://github.com/smmoosavi/the-newtype/actions)
+[![Latest Version](https://img.shields.io/crates/v/the-newtype.svg)](https://crates.io/crates/the-newtype)
+[![Rust Documentation](https://docs.rs/the-newtype/badge.svg)](https://docs.rs/the-newtype)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ## The Problem
 
 Sometimes you want to wrap a type in a newtype, but you want the newtype implements the same traits as the wrapped type. The `Newtype` trait helps you to implement the traits of the wrapped type for the newtype automatically.
