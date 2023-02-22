@@ -1,6 +1,6 @@
 [package]
 name = "the-newtype"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "The Newtype trait"
@@ -10,8 +10,8 @@ repository = "https://github.com/smmoosavi/the-newtype"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-the-newtype-core = { path = "./core", version = "0.1.0" }
-the-newtype-macros = { path = "./macros", version = "0.1.0" }
+the-newtype-core = { path = "./core", version = "0.1.1" }
+the-newtype-macros = { path = "./macros", version = "0.1.1" }
 
 [dev-dependencies]
 derive_more = "0.99"
